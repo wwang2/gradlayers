@@ -15,7 +15,7 @@ gradMLP = TupleSequential( GradLayer(8, 8, activation=torch.nn.Tanh(), activatio
 x = torch.randn(4, 8)
 inputs = (x, None)
 
-gradMLP(*inputs)
+gradMLP(*inputs) # get outputs and input jacobian/gradients in a tuple 
 ```
 out: 
 
@@ -33,8 +33,10 @@ out:
          [[-0.0806, -0.0203, -0.0260, -0.0612, -0.0145, -0.0863,  0.0295, 0.0228]]], grad_fn=<TransposeBackward0>))
 ```
 
-todo:
+#### todo
 
-Add benchmarks to compare with out.backward()
-Include more activation functions
-More architectures like GNN
+- [ ] Add benchmarks to compare with out.backward()
+
+- [ ] Include more activation functions
+
+- [ ] More architectures like GNN
